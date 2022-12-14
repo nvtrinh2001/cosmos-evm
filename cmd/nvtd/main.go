@@ -96,22 +96,22 @@ func main() {
 	//}
 	rootCmd.Commands()
 	for _, command := range rootCmd.Commands() {
-    if command.Use == "start" {
+            if command.Use == "start" {
 			rootCmd.RemoveCommand(command)
 		}
-    if command.Use == "keys" {
+            if command.Use == "keys" {
 			rootCmd.RemoveCommand(command)
 		}
-    if command.Use == "export" {
+            if command.Use == "export" {
 			rootCmd.RemoveCommand(command)
 		}
-    if command.Use == "rollback" {
+            if command.Use == "rollback" {
 			rootCmd.RemoveCommand(command)
 		}
-    if command.Use == "tendermint" {
+            if command.Use == "tendermint" {
 			rootCmd.RemoveCommand(command)
 		}
-    if command.Use == "version" {
+            if command.Use == "version" {
 			rootCmd.RemoveCommand(command)
 		}
 	}
