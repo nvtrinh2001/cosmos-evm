@@ -38,7 +38,6 @@ import (
 )
 
 func main() {
-	setupConfig()
 	cmdcfg.RegisterDenoms()
 	encodingConfig := encoding.MakeConfig(app.ModuleBasics)
 	initClientCtx := client.Context{}.
@@ -97,7 +96,7 @@ func main() {
 	//}
 	rootCmd.Commands()
 	for _, command := range rootCmd.Commands() {
-		if command.Use == "start" {
+    if command.Use == "start" {
 			rootCmd.RemoveCommand(command)
 		}
     if command.Use == "keys" {
@@ -132,14 +131,6 @@ func main() {
 }
 func addModuleInitFlags(startCmd *cobra.Command) {
 	crisis.AddModuleInitFlags(startCmd)
-}
-
-func setupConfig() {
-	// set the address prefixes
-	//config := sdk.GetConfig()
-	//cmdcfg.SetBech32Prefixes(config)
-	//cmdcfg.SetBip44CoinType(config)
-	//config.Seal()
 }
 
 type appCreator struct {
